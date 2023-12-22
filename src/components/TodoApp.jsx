@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import InputArea from "./InputArea";
-import TodoList from "./TodoList";
+import InputArea from "./core-todo-components/InputArea";
+import TodoList from "./core-todo-components/TodoList";
 
-
-export default function TodoApp({todo, updateTodo}) {
+export default function TodoApp({ todo, updateTodo }) {
 	const [input, setInput] = useState("");
 	// const [todo, updateTodo] = useState([]);
 
