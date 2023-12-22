@@ -37,7 +37,7 @@ export default function Todo({ todoObj, index, onDel, onEdit, onComplete }) {
 			{/* When Editing */}
 			<input
 				className={
-					(!isEdit ? "hidden" : "") +
+					(!isEdit ? " hidden" : "") +
 					" pl-2 bg-transparent outline-none border-b-2 border-gray-400 w-[90%]"
 				}
 				onChange={handleChange}
@@ -52,15 +52,15 @@ export default function Todo({ todoObj, index, onDel, onEdit, onComplete }) {
 					}
 					handleEdit();
 				}}
-				className={!isEdit ? "hidden" : ""}
+				className={!isEdit ? " hidden" : ""}
 			>
 				<CheckIcon />
 			</button>
 
 			{/* When Displaying */}
 			<div className="flex flex-row gap-2">
-				<div className={!todoObj.completed ? "hidden" : ""}> <CheckCircleIcon /></div>
-				<p className={isEdit ? "hidden" : ""}>{todoObj.todoItem}</p>
+				<div className={!todoObj.completed ? " hidden" : ""}> <CheckCircleIcon /></div>
+				<p className={isEdit ? " hidden" : ""}>{todoObj.todoItem}</p>
 			</div>
 
 			{!todoObj.completed ? (
@@ -69,13 +69,13 @@ export default function Todo({ todoObj, index, onDel, onEdit, onComplete }) {
 						onClick={() => {
 							onComplete(index);
 						}}
-						className={isHover && !isEdit ? "visible opacity-80 hover:opacity-50" : "hidden"}
+						className={isHover && !isEdit ? "visible opacity-80 hover:opacity-50" : " hidden"}
 					>
 						<CheckIcon />
 					</button>
 					<button
 						onClick={handleEdit}
-						className={isHover && !isEdit ? "visible opacity-80 hover:opacity-50" : "hidden"}
+						className={isHover && !isEdit ? "visible opacity-80 hover:opacity-50" : " hidden"}
 					>
 						<EditIcon />
 					</button>
@@ -83,7 +83,7 @@ export default function Todo({ todoObj, index, onDel, onEdit, onComplete }) {
 						onClick={() => {
 							onDel(index);
 						}}
-						className={isHover && !isEdit ? "visible opacity-80 hover:opacity-50" : "hidden"}
+						className={isHover && !isEdit ? "visible opacity-80 hover:opacity-50" : " hidden"}
 					>
 						<DeleteForeverIcon />
 					</button>
@@ -94,7 +94,7 @@ export default function Todo({ todoObj, index, onDel, onEdit, onComplete }) {
 						onClick={() => {
 							onComplete(index);
 						}}
-						className={isHover && !isEdit ? "visible opacity-80 hover:opacity-50" : "hidden"}
+						className={isHover && !isEdit ? "visible opacity-80 hover:opacity-50" : " hidden"}
 					>
 						<UnpublishedIcon />
 					</button>
@@ -102,7 +102,7 @@ export default function Todo({ todoObj, index, onDel, onEdit, onComplete }) {
 						onClick={() => {
 							onDel(index);
 						}}
-						className={isHover && !isEdit ? "visible opacity-80 hover:opacity-50" : "hidden"}
+						className={isHover && !isEdit ? "visible opacity-80 hover:opacity-50" : " hidden"}
 					>
 						<DeleteForeverIcon />
 					</button>
