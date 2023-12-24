@@ -1,9 +1,16 @@
 import React from "react";
 
-export default function SelectTodo() {
+export default function SelectTodo({ sectionTitle, updateSelected, selected }) {
+	function handleClick() {
+		console.log(sectionTitle);
+		updateSelected(sectionTitle);
+	}
 	return (
-		<div className="flex flex-col mt-24 mx-2 bg-[#3F3F3F]">
-			<button className="w-full">Todo 1</button>
-		</div>
+		<button
+			onClick={handleClick}
+			className={"w-full " + (selected == sectionTitle ? "bg-[#5F5F5F]" : "bg-[#3F3F3F]")}
+		>
+			{sectionTitle}
+		</button>
 	);
 }

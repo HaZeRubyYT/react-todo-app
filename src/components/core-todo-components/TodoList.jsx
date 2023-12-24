@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Todo from "./Todo";
 
-export default function TodoList({ todoList, updateTodo }) {
+export default function TodoList({ todoList, updateTodo, selected }) {
 	function editTodo(indexToEdit, newTodo) {
 		const array = [...todoList];
 		array[indexToEdit] = { ...array[indexToEdit], todoItem: newTodo };
@@ -25,10 +25,11 @@ export default function TodoList({ todoList, updateTodo }) {
 		updateCompleted(true);
 	}
 	return (
-		<div className="todo-div text-white grid grid-cols-1 px-36 py-2.5">
+		<div className="todo-div text-white grid grid-cols-1 px-28 py-2.5">
 			{todoList.map(
 				(todoObj, index) =>
-					!todoObj.completed && (
+					!todoObj.completed &&
+					todoObj.title == selected && (
 						<Todo
 							key={todoObj.id}
 							todoObj={todoObj}
@@ -42,7 +43,8 @@ export default function TodoList({ todoList, updateTodo }) {
 			<br />
 			{todoList.map(
 				(todoObj, index) =>
-					todoObj.completed && (
+					todoObj.completed &&
+					todoObj.title == selected && (
 						<Todo
 							key={todoObj.id}
 							todoObj={todoObj}
