@@ -30,15 +30,15 @@ export default function AddTodoSection({ sectionTitle, updateTitle, onAdd }) {
 	}
 
 	return (
-		<div className="px-5">
-			<form className="flex flex-row gap-2" onSubmit={handleSubmit}>
+		<div className="pl-5 pr-[0.5rem] my-4">
+			<form className="flex flex-row" onSubmit={handleSubmit}>
 				<input
-					className="basis-5/6 rounded p-2"
+					className="basis-5/6 rounded p-2 flex-grow"
 					placeholder="New Todo Section"
 					onChange={handleChange}
 					value={input}
 				></input>
-				<button className="basis-1/6 rounded p-0 m-0 text-lg" type="submit">
+				<button className="basis-2/12 rounded p-0 m-0 text-lg max-w-[3rem]" type="submit">
 					<AddCircleIcon htmlColor="#fff" fontSize="large" />
 				</button>
 			</form>

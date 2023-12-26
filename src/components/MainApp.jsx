@@ -20,10 +20,10 @@ export default function MainApp() {
 
 	function handleToggle() {
 		setAmbient((prevValue) => !prevValue);
-		if (!isAmbient) {
+		if (isAmbient) {
 			updateImg((prevValue) => {
-				if (prevValue === "space") {
-					return "bridge";
+				if (prevValue === imgList[2]) {
+					return imgList[0];
 				} else {
 					console.log(prevValue);
 					let index = imgList.findIndex((img) => img === prevValue);
@@ -41,8 +41,8 @@ export default function MainApp() {
 			className={`flex flex-row max-h-screen font-ubuntu ${
 				isAmbient
 					? "bg-[image:var(--image-url)] bg-center bg-no-repeat bg-[length:1600px_800px]"
-					: " bg-none"
-			} `}
+					: "bg-none"
+			}`}
 		>
 			<SectionSelect
 				sectionTitle={sectionTitle}
@@ -51,17 +51,9 @@ export default function MainApp() {
 				selected={selected}
 				deleteSection={deleteSection}
 				isAmbient={isAmbient}
+				handleToggle={handleToggle}
 			/>
 			<div className="w-3/4">
-				<div className="absolute top-[2.5rem] left-[28rem] font-sans">
-					<label className="relative inline-flex items-center cursor-pointer">
-						<input type="checkbox" value="" className="sr-only peer" onChange={handleToggle} />
-						<div className="w-11 h-6 bg-gray-200 peer-focus:outline-none  rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-						<span className="ms-3 text-sm font-medium text-gray-900 dark:text-gray-500">
-							Ambient Mode
-						</span>
-					</label>
-				</div>
 				{sectionTitle && selected.length > 0 ? (
 					<TodoApp todo={todo} updateTodo={updateTodo} selected={selected} />
 				) : null}
@@ -69,5 +61,3 @@ export default function MainApp() {
 		</div>
 	);
 }
-
-// [{id, title, list:[{id, todo, completed}, ] }, ]

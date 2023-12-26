@@ -31,7 +31,7 @@ export default function TodoApp({ todo, updateTodo, selected }) {
 		});
 	}
 	return (
-		<div className="max-h-screen overflow-y-auto font-ubuntu">
+		<div className="max-h-screen overflow-y-auto font-ubuntu scroll-smooth">
 			<InputArea input={input} setInput={setInput} onAdd={addTodo} />
 			<TodoList todoList={todo} updateTodo={updateTodo} onComplete={completeTodo} selected={selected} />
 		</div>

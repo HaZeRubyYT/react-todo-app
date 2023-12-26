@@ -7,7 +7,10 @@ export default {
 				ubuntu: "Ubuntu Mono",
 			},
 			backgroundImage: {
-				"aurora": "url('src/components/images/auroraLake.jpg')",
+				aurora: "url('src/components/images/auroraLake.jpg')",
+			},
+			colors: {
+				"section-gray": "#444",
 			},
 		},
 	},

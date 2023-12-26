@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import ClearIcon from "@mui/icons-material/Clear";
 
 export default function SelectTodo({ sectionTitle, updateSelected, selected, deleteSection }) {
+	const [isHover, setHover] = useState(false);
+
 	function handleSelectClick() {
 		console.log(sectionTitle);
 		updateSelected(sectionTitle);
@@ -9,19 +11,26 @@ export default function SelectTodo({ sectionTitle, updateSelected, selected, del
 	function handleDeleteClick() {
 		deleteSection(sectionTitle);
 	}
+	function handleHover() {
+		setHover((prevValue) => !prevValue);
+	}
 	return (
 		<div
 			className={
-				"w-full flex flex-row justify-between " +
-				(selected == sectionTitle ? "bg-[#5F5F5F]" : "bg-[#3F3F3F]")
+				"flex flex-row justify-center text-white min-h-[2rem] bg-[#1F1F1F] " +
+				(selected == sectionTitle ? "border rounded-md border-white" : null)
 			}
+			onMouseOver={handleHover}
+			onMouseOut={handleHover}
 		>
-			<button onClick={handleSelectClick} className="w-10/12">
+			<button onClick={handleSelectClick} className={`${isHover ? "w-11/12 p-auto" : "w-full"}`}>
 				{sectionTitle}
 			</button>
-			<button className="w-2/12" onClick={handleDeleteClick}>
-				<ClearIcon />
-			</button>
+			{isHover ? (
+				<button className="w-1/12" onClick={handleDeleteClick}>
+					<ClearIcon />
+				</button>
+			) : null}
 		</div>
 	);
 }
