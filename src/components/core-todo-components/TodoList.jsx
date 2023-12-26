@@ -58,3 +58,7 @@ export default function TodoList({ todoList, updateTodo, selected }) {
 		</div>
 	);
 }
+
+
+
+// {id: title: text:}

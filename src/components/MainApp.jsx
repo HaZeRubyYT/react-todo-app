@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import TodoApp from "./TodoApp.jsx";
 import SectionSelect from "./SectionSelectMenu.jsx";
+import bridge from "/public/images/bridge.jpg";
+import monolith from "/public/images/monolith.jpg"
+import space from "/public/images/space.jpg";
 
 export default function MainApp() {
 	const [todo, updateTodo] = useState([]);
 	const [sectionTitle, updateTitle] = useState([]);
 	const [selected, updateSelected] = useState("");
 	const [isAmbient, setAmbient] = useState(false);
-	const [imgList, changeList] = useState(["bridge", "monolith", "space"]);
+	const [imgList, changeList] = useState([bridge, space, monolith]);
 	const [currImg, updateImg] = useState(imgList[0]);
 
 	function deleteSection(titleToDel) {
@@ -37,7 +40,7 @@ export default function MainApp() {
 
 	return (
 		<div
-			style={{ "--image-url": `url('/public/images/${currImg}.jpg')` }}
+			style={{ "--image-url": `url(${currImg})` }}
 			className={`flex flex-row max-h-screen font-ubuntu ${
 				isAmbient
 					? "bg-[image:var(--image-url)] bg-center bg-no-repeat bg-[length:1600px_800px]"
