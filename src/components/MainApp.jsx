@@ -43,7 +43,7 @@ export default function MainApp() {
 			style={{ "--image-url": `${currImg}` }}
 			className={`flex flex-row max-h-screen font-ubuntu ${
 				isAmbient
-					? "bg-[image:var(--image-url)] bg-center bg-no-repeat bg-[length:1600px_800px]"
+					? `bg-[image:${currImg}] bg-center bg-no-repeat bg-[length:1600px_800px]`
 					: "bg-none"
 			}`}
 		>
