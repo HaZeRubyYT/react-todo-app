@@ -28,19 +28,19 @@ export default function MainApp() {
 				if (prevValue === imgList[2]) {
 					return imgList[0];
 				} else {
-					console.log(prevValue);
+					// console.log(prevValue);
 					let index = imgList.findIndex((img) => img === prevValue);
 					return imgList[index + 1];
 				}
 			});
 		}
 
-		console.log(currImg);
+		// console.log(currImg);
 	}
 
 	return (
 		<div
-			style={{ "bg-image": `${currImg}` }}
+			style={isAmbient ? { "backgroundImage": `url(${currImg})` } : null}
 			className={`flex flex-row max-h-screen font-ubuntu ${
 				isAmbient
 					? `bg-center bg-no-repeat bg-[length:1600px_800px]`
