@@ -4,12 +4,13 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				ubuntu: 'Ubuntu Mono',
+				ubuntu: "Ubuntu Mono",
+			},
+			backgroundImage: {
+				"aurora": "url('src/components/images/auroraLake.jpg')",
 			},
 		},
 	},
 	plugins: [],
 };
-
-
 

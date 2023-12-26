@@ -21,7 +21,7 @@ export default function InputArea({ setInput, input, onAdd }) {
 					onChange={handleInput}
 				/>
 				<button
-					className="text-white border-solid border border-spacing-4 border-white rounded-md"
+					className="text-white border-solid border-2 border-spacing-4 border-white rounded-md text-lg"
 					type="submit"
 				>
 					Add
