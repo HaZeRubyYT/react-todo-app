@@ -7,9 +7,8 @@ export default function MainApp() {
 	const [sectionTitle, updateTitle] = useState([]);
 	const [selected, updateSelected] = useState("");
 	const [isAmbient, setAmbient] = useState(false);
-	const [imgList, changeList] = useState(["bridge", "monolith", "space"])
+	const [imgList, changeList] = useState(["bridge", "monolith", "space"]);
 	const [currImg, updateImg] = useState(imgList[0]);
-	
 
 	function deleteSection(titleToDel) {
 		updateTodo((prevItems) => {
