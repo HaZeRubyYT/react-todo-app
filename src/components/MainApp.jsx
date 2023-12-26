@@ -37,7 +37,7 @@ export default function MainApp() {
 
 	return (
 		<div
-			style={{ "--image-url": `url('/src/components/images/${currImg}.jpg')` }}
+			style={{ "--image-url": `url('/public/images/${currImg}.jpg')` }}
 			className={`flex flex-row max-h-screen font-ubuntu ${
 				isAmbient
 					? "bg-[image:var(--image-url)] bg-center bg-no-repeat bg-[length:1600px_800px]"
